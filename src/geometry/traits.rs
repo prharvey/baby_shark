@@ -1,12 +1,12 @@
-use nalgebra::ClosedDiv;
+use nalgebra::ClosedDivAssign;
 use num_traits::{NumCast, Float};
 
 use crate::helpers::aliases::Vec3;
 
 use super::primitives::{box3::Box3, triangle3::Triangle3, plane3::Plane3};
 
-pub trait Number: nalgebra_glm::Number + NumCast + ClosedDiv {}
-impl<T> Number for T where T: nalgebra_glm::Number + NumCast + ClosedDiv {}
+pub trait Number: nalgebra_glm::Number + NumCast + ClosedDivAssign {}
+impl<T> Number for T where T: nalgebra_glm::Number + NumCast + ClosedDivAssign {}
 
 pub trait RealNumber: nalgebra_glm::RealNumber + Float {}
 impl<T> RealNumber for T where T: nalgebra_glm::RealNumber + Float {}
